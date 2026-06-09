@@ -13,11 +13,6 @@
 pub mod bytes;
 pub mod utf8;
 
-/// This is used by dracut.
-pub const INITRD_ARG_PREFIX: &str = "rd.";
-/// The kernel argument for configuring the rootfs flags.
-pub const ROOTFLAGS: &str = "rootflags";
-
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 /// Possible outcomes for `add_or_modify` operations.
 pub enum Action {

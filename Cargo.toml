@@ -1,14 +1,26 @@
 [package]
-name = "bootc-kernel-cmdline"
-description = "Kernel command line parsing utilities for bootc"
-version = "0.0.0"
+name = "linux-kernel-cmdline"
+version = "0.1.0"
 edition = "2024"
+rust-version = "1.87"
 license = "MIT OR Apache-2.0"
-repository = "https://github.com/bootc-dev/bootc"
+repository = "https://github.com/jeckersb/linux-kernel-cmdline"
+homepage = "https://github.com/jeckersb/linux-kernel-cmdline"
+keywords = ["kernel", "cmdline", "boot", "linux", "parsing"]
+categories = ["os::linux-apis", "parser-implementations"]
+
+description = """
+A parser for the Linux kernel command line (/proc/cmdline), supporting both
+byte-level and UTF-8 parsing with proper quote handling and dash/underscore
+equivalence for parameter keys.
+"""
+
+[features]
+serde = ["dep:serde"]
 
 [dependencies]
 anyhow = "1.0.82"
-serde = { version = "1.0.199", features = ["derive"] }
+serde = { version = "1.0.199", features = ["derive"], optional = true }
 
 [dev-dependencies]
 similar-asserts = "2.0.0"
