@@ -1,0 +1,29 @@
+[package]
+name = "bootc-kernel-cmdline"
+description = "Kernel command line parsing utilities for bootc"
+version = "0.0.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/bootc-dev/bootc"
+
+[dependencies]
+anyhow = "1.0.82"
+serde = { version = "1.0.199", features = ["derive"] }
+
+[dev-dependencies]
+similar-asserts = "2.0.0"
+static_assertions = "1.1.0"
+
+[lints.rust]
+unsafe_code = "deny"
+unused_must_use = "forbid"
+missing_docs = "allow"
+missing_debug_implementations = "deny"
+dead_code = "deny"
+
+[lints.clippy]
+disallowed_methods = "deny"
+dbg_macro = "deny"
+todo = "deny"
+needless_borrow = "allow"
+needless_borrows_for_generic_args = "allow"
