@@ -6,6 +6,7 @@ rust-version = "1.87"
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/jeckersb/linux-kernel-cmdline"
 homepage = "https://github.com/jeckersb/linux-kernel-cmdline"
+readme = "README.md"
 keywords = ["kernel", "cmdline", "boot", "linux", "parsing"]
 categories = ["os::linux-apis", "parser-implementations"]
 
