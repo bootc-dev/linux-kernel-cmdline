@@ -55,8 +55,6 @@ jobs:
     - run: cargo fmt -- --check
 
   semver-checks:
-    # TODO: Re-enable after initial crates.io publish
-    if: false
     name: Semver Checks
     runs-on: ubuntu-24.04
     timeout-minutes: 10
@@ -68,11 +66,12 @@ jobs:
   # repository settings as the single required status check.
   required-checks:
     if: always()
-    needs: [test, rustfmt]
+    needs: [test, rustfmt, semver-checks]
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
       - run: exit 1
         if: >-
           needs.test.result != 'success' ||
-          needs.rustfmt.result != 'success'
+          needs.rustfmt.result != 'success' ||
+          needs.semver-checks.result != 'success'
